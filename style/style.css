@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  --primary-font: "General Sans", sans-serif;
+  --secondary-font: "JetBrains Mono", sans-serif;
+
+  /* Colors */
+
+  --primary-bg-color: #0d1117;
+  --secondary-bg-color: #161b22;
+  --primary-font-color: #e6edf3;
+  --primary-btn-bg-color: #5e17eb;
+  --primary-btn-font-color: #e6edf3;
+  --secondary-font-color: #7d8990;
+}
+
+/* style for header and navagation bar */
+
+header {
+  background-color: var(--primary-bg-color);
+  padding: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  color: var(--primary-font-color);
+}
+header nav .logo {
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-font-color);
+}
+header nav .links {
+  display: flex;
+  gap: 2rem;
+}
+
+header nav .links a {
+  font-family: var(--primary-font);
+  font-size: 1;
+  color: var(--primary-font-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+header nav .toggler {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--primary-font-color);
+}
+
+header nav .toggler span {
+  color: var(--primary-font-color);
+  font-size: 1.9rem;
+}
+.active {
+  clip-path: polygon(1% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+@media screen and (max-width: 868px) {
+  .active {
+    clip-path: polygon(1% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+  header nav .toggler {
+    display: inline-block;
+    font-size: 2rem;
+  }
+  header nav .links {
+    clip-path: polygon(1% 0, 100% 0%, 100% 0, 0 0);
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    height: 30vh;
+    top: 200px;
+    
+    background: var(--secondary-bg-color);
+    align-items: center;
+    margin-right: 4px;
+    width: 200px;
+    justify-content: space-evenly;
+    border-radius: 4px;
+  }
+
+  header nav .links a {
+    font-size: 1.2rem;
+    color: var(--secondary-font-color);
+  }
+}
